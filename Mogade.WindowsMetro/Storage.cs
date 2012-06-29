@@ -4,6 +4,7 @@ using Windows.Storage;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.IO;
 //using Microsoft.Phone.Info;
 
 namespace Mogade.WindowsMetro
@@ -14,7 +15,7 @@ namespace Mogade.WindowsMetro
       private const string _userNamesDataFile = "usernames.dat";
 
       private Configuration _configuration;
-      private IList<string> _userNames;
+      private List<string> _userNames;
 
       public Storage()
       {
@@ -26,9 +27,13 @@ namespace Mogade.WindowsMetro
             StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             
             StorageFile file  = await storageFolder.CreateFileAsync(_userNamesDataFile, CreationCollisionOption.OpenIfExists);
-            _userNames = await FileIO.ReadLinesAsync(file, Windows.Storage.Streams.UnicodeEncoding.Utf8);
-                        //StorageFile file2  = await storageFolder.CreateFileAsync(_userNamesDataFile, CreationCollisionOption.OpenIfExists);
-            _configuration = await Read<Configuration>(_mogadeDataFile);
+
+            _userNames = await Read<List<string>>(_userNamesDataFile);
+
+            if (_userNames == null)
+                _userNames = new List<string>();
+            
+           _configuration = await Read<Configuration>(_mogadeDataFile);
             
            if (_configuration == null)
             {
@@ -96,37 +101,35 @@ namespace Mogade.WindowsMetro
          if (string.IsNullOrEmpty(userName) || !_userNames.Remove(userName)) { return; }
          WriteToFile(_userNames, _userNamesDataFile);
       }
+
       private static async Task<T> Read<T>(string dataFile)
       {
           StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
 
-          StorageFile file  = await storageFolder.CreateFileAsync(dataFile, CreationCollisionOption.OpenIfExists);
-          string data = await FileIO.ReadTextAsync(file, Windows.Storage.Streams.UnicodeEncoding.Utf8);
-          return JsonConvert.DeserializeObject<T>(data);
-          
-
-         //using (var store = Windows.Storage..GetUserStoreForApplication())
-         //using (var stream = new IsolatedStorageFileStream(dataFile, System.IO.FileMode.OpenOrCreate, store))
-         //{
-         //   if (stream.Length <= 0) { return default(T); }
-         //   var buffer = new byte[stream.Length];
-         //   stream.Read(buffer, 0, buffer.Length);
-         //   return JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(buffer, 0, buffer.Length));
-         //}        
+          using (Stream fs = await storageFolder.OpenStreamForReadAsync(dataFile))
+          {
+              if (fs.Length > 0)
+              {
+                  using (StreamReader sr = new StreamReader(fs))
+                  {
+                      return JsonConvert.DeserializeObject<T>(sr.ReadToEnd());
+                  }
+              }
+              else
+                  return default(T);
+          }
       }
       private static async void WriteToFile(object objectToWrite, string dataFile)
       {
           StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
 
-          StorageFile file = await storageFolder.CreateFileAsync(dataFile, CreationCollisionOption.OpenIfExists);
-          await FileIO.WriteTextAsync(file, JsonConvert.SerializeObject(objectToWrite), Windows.Storage.Streams.UnicodeEncoding.Utf8);
-
-         //using (var store = IsolatedStorageFile.GetUserStoreForApplication())
-         //using (var stream = new IsolatedStorageFileStream(dataFile, System.IO.FileMode.Create, store))
-         //{
-         //   var buffer = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(objectToWrite));
-         //   stream.Write(buffer, 0, buffer.Length);
-         //}
+          using (Stream fs = await storageFolder.OpenStreamForWriteAsync(dataFile, CreationCollisionOption.ReplaceExisting))
+          {
+              using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
+              {
+                  sw.Write(JsonConvert.SerializeObject(objectToWrite));
+              }
+          }
       }
    }
 }
