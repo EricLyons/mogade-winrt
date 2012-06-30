@@ -110,12 +110,9 @@
     <Compile Include="UniqueIdStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mogade.Metro.Core\Mogade.Metro.Core.csproj">
-      <Project>{7ba9284e-4c9f-4f5c-af27-e4d07567580b}</Project>
-      <Name>Mogade.Metro.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <Reference Include="Mogade.Metro.Core">
+      <HintPath>bin\Release\Mogade.Metro.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\winrt45\Newtonsoft.Json.dll</HintPath>
     </Reference>

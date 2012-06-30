@@ -106,6 +106,8 @@ namespace Mogade.WindowsMetro
       {
           StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
 
+          StorageFile storageFile = await storageFolder.CreateFileAsync(dataFile, CreationCollisionOption.OpenIfExists);
+          
           using (Stream fs = await storageFolder.OpenStreamForReadAsync(dataFile))
           {
               if (fs.Length > 0)
@@ -122,6 +124,8 @@ namespace Mogade.WindowsMetro
       private static async void WriteToFile(object objectToWrite, string dataFile)
       {
           StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+
+          StorageFile storageFile = await storageFolder.CreateFileAsync(dataFile, CreationCollisionOption.OpenIfExists);
 
           using (Stream fs = await storageFolder.OpenStreamForWriteAsync(dataFile, CreationCollisionOption.ReplaceExisting))
           {

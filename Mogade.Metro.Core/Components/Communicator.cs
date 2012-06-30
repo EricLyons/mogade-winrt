@@ -150,7 +150,17 @@ namespace Mogade
           objHash.Append(buffMsg1);
           IBuffer buffHash1 = objHash.GetValueAndReset();
 
-          return CryptographicBuffer.EncodeToBase64String(buffHash1);
+          byte[] bytes = null; //new byte[buffHash1.Length];
+          CryptographicBuffer.CopyToByteArray(buffHash1, out bytes);
+
+          var data = new StringBuilder((int)bytes.Length * 2);
+          for (var i = 0; i < bytes.Length; ++i)
+          {
+              data.Append(bytes[i].ToString("x2"));
+          }
+
+          return data.ToString();
+          //return CryptographicBuffer.EncodeToBase64String(buffHash1);
       }
 
       private static IEnumerable<KeyValuePair<string, object>> SortParameterForSignature(IEnumerable<KeyValuePair<string, object>> payload)
