@@ -104,21 +104,28 @@ namespace Mogade.WindowsMetro
 
       private static async Task<T> Read<T>(string dataFile)
       {
-          StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-
-          StorageFile storageFile = await storageFolder.CreateFileAsync(dataFile, CreationCollisionOption.OpenIfExists);
-          
-          using (Stream fs = await storageFolder.OpenStreamForReadAsync(dataFile))
+          try
           {
-              if (fs.Length > 0)
+              StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+
+              StorageFile storageFile = await storageFolder.CreateFileAsync(dataFile, CreationCollisionOption.OpenIfExists);
+
+              using (Stream fs = await storageFolder.OpenStreamForReadAsync(dataFile))
               {
-                  using (StreamReader sr = new StreamReader(fs))
+                  if (fs.Length > 0)
                   {
-                      return JsonConvert.DeserializeObject<T>(sr.ReadToEnd());
+                      using (StreamReader sr = new StreamReader(fs))
+                      {
+                          return JsonConvert.DeserializeObject<T>(sr.ReadToEnd());
+                      }
                   }
+                  else
+                      return default(T);
               }
-              else
-                  return default(T);
+          }
+          catch 
+          {
+              return default(T);
           }
       }
       private static async void WriteToFile(object objectToWrite, string dataFile)
