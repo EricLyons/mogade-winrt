@@ -110,15 +110,19 @@
     <Compile Include="UniqueIdStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Mogade.Metro.Core">
-      <HintPath>bin\Release\Mogade.Metro.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\winrt45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Mogade.Metro.Core\Mogade.Metro.Core.csproj">
+      <Project>{7ba9284e-4c9f-4f5c-af27-e4d07567580b}</Project>
+      <Name>Mogade.Metro.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DevTrunk\Windows8Dev\Wordastic\packages\Newtonsoft.Json.4.5.7\lib\winrt45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

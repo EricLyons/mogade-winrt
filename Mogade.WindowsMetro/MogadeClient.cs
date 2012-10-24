@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
+using Windows.Storage;
 
 namespace Mogade.WindowsMetro
 {
@@ -14,15 +15,15 @@ namespace Mogade.WindowsMetro
       private readonly IDriver _driver;
       private readonly IStorage _storage;
       
-      public static IMogadeClient Initialize(string gameKey, string secret)
+      public static IMogadeClient Initialize(string gameKey, string secret, StorageFolder storageFolder)
       {
-         return new MogadeClient(gameKey, secret);
+         return new MogadeClient(gameKey, secret, storageFolder);
       }
 
-      private MogadeClient(string gameKey, string secret)
+      private MogadeClient(string gameKey, string secret, StorageFolder storageFolder)
       {
          _driver = new Driver(gameKey, secret);
-         _storage = new Storage();
+         _storage = new Storage(storageFolder);
       }
 
       public IDriver Driver

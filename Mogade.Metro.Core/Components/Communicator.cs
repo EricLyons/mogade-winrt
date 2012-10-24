@@ -56,7 +56,14 @@ namespace Mogade
 //#if !WINDOWS_PHONE
 //            request.ContentLength = data.Length;
 //#endif
-            request.BeginGetRequestStream(GetRequestStream<T>, new RequestState<T> { Request = request, Payload = data, Callback = callback });
+            try
+            {
+                request.BeginGetRequestStream(GetRequestStream<T>, new RequestState<T> { Request = request, Payload = data, Callback = callback });
+            }
+            catch 
+            {
+                // just catching any exceptions thrown here and handling them silently
+            }
          }
       }
 

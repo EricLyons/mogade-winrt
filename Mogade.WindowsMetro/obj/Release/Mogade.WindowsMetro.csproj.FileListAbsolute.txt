@@ -1,0 +1,16 @@
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.WindowsMetro.dll
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.WindowsMetro.pdb
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.WindowsMetro.pri
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.Metro.Core.dll
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Newtonsoft.Json.dll
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.Metro.Core.pdb
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.Metro.Core.pri
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Newtonsoft.Json.xml
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\Mogade.WindowsMetro.csprojResolveAssemblyReference.cache
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\Mogade.WindowsMetro.dll
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\Mogade.WindowsMetro.pdb
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\priconfig.xml
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\layout.resfiles
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\resources.resfiles
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\pri.resfiles
+D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\LanguageQualifiers.txt
