@@ -8,6 +8,8 @@ using Newtonsoft.Json;
 using Windows.Security.Cryptography;
 using Windows.Security.Cryptography.Core;
 using Windows.Storage.Streams;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace Mogade
 {
@@ -245,5 +247,82 @@ namespace Mogade
       {         
          public byte[] Payload { get; set; }
       }
+
+
+
+      #region Async and Await
+      public async Task<Response<T>> SendPayloadAsync<T>(string method, string endPoint, IDictionary<string, object> partialPayload)
+      {
+          if (!DriverConfiguration.Data.NetworkCheck())
+          {
+              return Response<T>.CreateError(new ErrorMessage { Message = "Network is not available" });
+          }
+          var isGet = method == Get;
+
+          var url = string.Concat(DriverConfiguration.Data.Url, _context.ApiVersion, "/", endPoint);
+          var payload = FinalizePayload(partialPayload, isGet);
+          if (isGet) { url += '?' + payload; }
+          var request = (HttpWebRequest)WebRequest.Create(url);
+          request.Method = method;
+          //request.UserAgent = "mogade-csharp2";
+          //#if !WINDOWS_PHONE
+          //         request.Timeout = 10000;
+          //         request.ReadWriteTimeout = 10000;
+          //         request.KeepAlive = false;
+          //#endif   
+          if (isGet)
+          {
+              using (WebResponse response = await request.GetResponseAsync())
+              {
+                  return Response<T>.CreateSuccess(GetResponseBody(response));
+              }
+          }
+          else
+          {
+              request.ContentType = "application/x-www-form-urlencoded";
+              var data = Encoding.UTF8.GetBytes(payload);
+              //#if !WINDOWS_PHONE
+              //            request.ContentLength = data.Length;
+              //#endif
+              await GetRequestStreamAsync<T>(request, data);
+              var r = await GetResponseStreamAsync<T>(request);
+              return r;
+          }
+      }
+
+
+
+      private async static Task GetRequestStreamAsync<T>(HttpWebRequest request, byte[] data)
+      {
+          using (Stream requestStream = await request.GetRequestStreamAsync())
+          {
+              await requestStream.WriteAsync(data, 0, data.Length);
+              await requestStream.FlushAsync();
+          }
+      }
+
+
+      private async Task<Response<T>> GetResponseStreamAsync<T>(HttpWebRequest request)
+      {
+
+          try
+          {
+              using (WebResponse response = await request.GetResponseAsync())
+              {
+                  return Response<T>.CreateSuccess(GetResponseBody(response));
+              }
+
+          }
+          catch (Exception ex)
+          {
+              return Response<T>.CreateError(HandleException(ex));
+          }
+      }
+
+
+      #endregion
+
+
+
    }
 }

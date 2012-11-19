@@ -11,3 +11,19 @@ D:\My Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\resources.resf
 D:\My Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\pri.resfiles
 D:\My Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\LanguageQualifiers.txt
 D:\My Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\Mogade.Metro.Core.csprojResolveAssemblyReference.cache
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\bin\Release\Mogade.Metro.Core.dll
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\bin\Release\Mogade.Metro.Core.pdb
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\bin\Release\Mogade.Metro.Core.pri
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\bin\Release\Newtonsoft.Json.xml
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\Mogade.Metro.Core.csprojResolveAssemblyReference.cache
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\Mogade.Metro.Core.dll
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\Mogade.Metro.Core.pdb
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\priconfig.xml
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\layout.resfiles
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\resources.resfiles
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\pri.resfiles
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\LanguageQualifiers.txt
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\priconfig.xml.intermediate
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\layout.resfiles.intermediate
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\resources.resfiles.intermediate
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.Metro.Core\obj\Release\pri.resfiles.intermediate

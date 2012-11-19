@@ -14,3 +14,22 @@ D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\layout.resfi
 D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\resources.resfiles
 D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\pri.resfiles
 D:\My Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\LanguageQualifiers.txt
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.WindowsMetro.dll
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.WindowsMetro.pdb
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.WindowsMetro.pri
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.Metro.Core.dll
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.Metro.Core.pdb
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Mogade.Metro.Core.pri
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\bin\Release\Newtonsoft.Json.xml
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\Mogade.WindowsMetro.csprojResolveAssemblyReference.cache
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\Mogade.WindowsMetro.dll
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\Mogade.WindowsMetro.pdb
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\priconfig.xml
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\layout.resfiles
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\resources.resfiles
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\pri.resfiles
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\LanguageQualifiers.txt
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\priconfig.xml.intermediate
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\layout.resfiles.intermediate
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\resources.resfiles.intermediate
+C:\Users\EricL_000\Documents\GitHub\mogade-winrt\Mogade.WindowsMetro\obj\Release\pri.resfiles.intermediate
